@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     var userAnswer: Int?
-
+    
     @IBOutlet weak var guessTextField: UITextField!
     @IBOutlet weak var answerLabel: UILabel!
     
@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         answerLabel.text = "Enter your guess."
         
     }
-
+    
     @IBAction func guessTapped(_ sender: Any) {
         
         if let userAnswer = Int(guessTextField.text!) {
