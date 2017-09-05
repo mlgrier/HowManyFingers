@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,13 +12,65 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HowManyFingers" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How Many Fingers?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmb-Rv-9rp">
+                                <rect key="frame" x="72" y="20" width="230" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How many fingers am I holding up?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SUr-Af-J1O">
+                                <rect key="frame" x="54" y="82" width="267" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Did you get it?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G9y-RX-Zvd">
+                                <rect key="frame" x="132" y="237" width="110" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Guess Here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uCh-RL-gKj">
+                                <rect key="frame" x="125" y="129" width="125" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GAN-lD-T5r">
+                                <rect key="frame" x="159" y="182" width="56" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Guess"/>
+                                <connections>
+                                    <action selector="guessTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VHE-No-WuL"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="uCh-RL-gKj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="00o-g2-So7"/>
+                            <constraint firstItem="hmb-Rv-9rp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="DFN-RZ-R5A"/>
+                            <constraint firstItem="SUr-Af-J1O" firstAttribute="top" secondItem="hmb-Rv-9rp" secondAttribute="bottom" constant="29" id="IAs-NV-Nif"/>
+                            <constraint firstItem="uCh-RL-gKj" firstAttribute="top" secondItem="SUr-Af-J1O" secondAttribute="bottom" constant="26" id="LLy-qd-b5Q"/>
+                            <constraint firstItem="G9y-RX-Zvd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Mqx-vH-q0d"/>
+                            <constraint firstItem="GAN-lD-T5r" firstAttribute="top" secondItem="uCh-RL-gKj" secondAttribute="bottom" constant="23" id="eSd-lL-LQ1"/>
+                            <constraint firstItem="GAN-lD-T5r" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jhd-Np-jrJ"/>
+                            <constraint firstItem="G9y-RX-Zvd" firstAttribute="top" secondItem="GAN-lD-T5r" secondAttribute="bottom" constant="19" id="k9p-JU-w8P"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uCh-RL-gKj" secondAttribute="trailing" constant="125" id="kru-Ab-3Ds"/>
+                            <constraint firstItem="hmb-Rv-9rp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="o8Q-zZ-GFR"/>
+                            <constraint firstItem="SUr-Af-J1O" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qPp-zU-gJV"/>
+                            <constraint firstItem="uCh-RL-gKj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="125" id="zuN-hD-lys"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="answerLabel" destination="G9y-RX-Zvd" id="U7U-cr-zNh"/>
+                        <outlet property="guessTextField" destination="uCh-RL-gKj" id="dmU-tb-4ra"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -9,17 +9,40 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var userAnswer: Int?
 
+    @IBOutlet weak var guessTextField: UITextField!
+    @IBOutlet weak var answerLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        answerLabel.text = "Enter your guess."
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func guessTapped(_ sender: Any) {
+        
+        if let userAnswer = Int(guessTextField.text!) {
+            
+            let randomNumber = arc4random_uniform(11)
+            
+            if userAnswer == randomNumber {
+                
+                answerLabel.text = "\(randomNumber) is correct!"
+                self.view.backgroundColor = UIColor.green
+                
+            } else {
+                
+                answerLabel.text = "Try again it was \(randomNumber)."
+                self.view.backgroundColor = UIColor.white
+                
+            }
+            
+        }
+        
     }
-
-
+    
 }
 
